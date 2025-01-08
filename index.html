@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to E-Learning Platform</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Available Courses</h2>
+        <ul class="course-list">
+            {% for course in courses %}
+            <li class="course-item">
+                <!-- Display course image -->
+                <img src="{{ url_for('static', filename='images/' + course.image) }}" alt="{{ course.name }}" class="course-image">
+                <h3>{{ course.name }}</h3>
+                <p>{{ course.description }}</p>
+                <a href="#">Enroll Now</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

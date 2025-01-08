@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}{{ course['title'] }} - E-Learning Platform{% endblock %}
+{% block content %}
+<h2>{{ course['title'] }}</h2>
+<img src="{{ course['image'] }}" alt="{{ course['title'] }}">
+<p>{{ course['description'] }}</p>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}
